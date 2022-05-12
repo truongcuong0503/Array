@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let nums = [];
+    let index1 = 0
+    let index2 = 0
+    for(let i = 0; i < 100; ++i){
+        nums[i] = Math.floor(Math.random() * 101);      
+        document.write(nums[i] + ", ")
+    }
+    function findMin(arr) {
+        let min = arr[0];
+        for (let i = 1; i < arr.length; ++i) {
+            if (arr[i] < min) {
+                min = arr[i];
+                index1 = i
+            }
+        }
+        return min;
+    }
+    function findMax(arr) {
+        let max = arr[0];
+        for (let i = 1; i < arr.length; ++i) {
+            if (arr[i] > max) {
+                    max = arr[i];
+                    index2 = i 
+            }
+        }
+        return max;
+    }
+    let minValue = findMin(nums);
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write("The minimum value is: " + minValue + " at position " + index1);
+    let maxValue = findMax(nums);
+        document.write("<br/>");
+        document.write("The maximum value is: " + maxValue + " at position " + index2);
+</script>
+</html>
