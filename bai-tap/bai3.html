@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Nhập vào một chuỗi: </h3>
+    <input type="text" id="text">
+    <input type="button" onclick="show()" value="Kiểm tra">
+    <p id="result"></p>
+</body>
+<script>
+    function show() {
+    let text = document.getElementById("text").value
+    let str = text.toString()
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+  
+    for(let x = 0; x < str.length; x++) {
+        if(UPPER.indexOf(str[x]) !== -1) {
+            result.push(str[x].toLowerCase());
+        } else if (LOWER.indexOf(str[x]) !== -1) {
+            result.push(str[x].toUpperCase());
+        } else {
+            result.push(str[x]);
+        }
+    }
+    document.getElementById("result").innerHTML = "result: " + result.join("")
+}
+</script>
+</html>
